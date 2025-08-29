@@ -7,10 +7,10 @@
     <style>
         :root {
             --primary-color: #3498db;
-            --secondary-color: #2980b9;
-            --text-color: #444;
-            --light-bg: #f8f9fa;
-            --border-color: #dee2e6;
+            --border-color: #e0e0e0;
+            --bg-light: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
         }
         
         * {
@@ -21,41 +21,41 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.5;
+            line-height: 1.4;
             color: var(--text-color);
-            background-color: #f5f7fa;
-            padding: 15px;
-            font-size: 14px;
+            background-color: var(--bg-light);
+            padding: 12px;
+            font-size: 13px;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
         
         h1 {
             text-align: center;
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 22px;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
         
-        .calculators-grid {
+        .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
         }
         
         .calculator-section {
             background: #ffffff;
-            border-radius: 6px;
-            padding: 16px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border-radius: 5px;
+            padding: 12px;
             border: 1px solid var(--border-color);
+            height: 100%;
         }
         
         h2 {
@@ -63,36 +63,36 @@
             border-bottom: 1px solid #f0f3f7;
             padding-bottom: 8px;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 16px;
+            margin-bottom: 12px;
+            font-size: 14px;
         }
         
         .input-group {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             font-weight: 600;
-            color: var(--text-color);
-            font-size: 13px;
+            color: var(--text-light);
+            font-size: 12px;
         }
         
         input {
             width: 100%;
-            padding: 8px;
+            padding: 6px;
             border: 1px solid #ddd;
             border-radius: 3px;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         button {
             background: var(--primary-color);
             color: white;
             border: none;
-            padding: 9px 16px;
-            font-size: 13px;
+            padding: 8px;
+            font-size: 12px;
             border-radius: 3px;
             cursor: pointer;
             transition: background 0.3s;
@@ -102,25 +102,31 @@
         }
         
         button:hover {
-            background: var(--secondary-color);
+            background: #2980b9;
         }
         
         .result {
-            margin-top: 15px;
-            padding: 12px;
+            margin-top: 10px;
+            padding: 10px;
             background: #e8f4fc;
             border-radius: 3px;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         .result h3 {
             margin: 0;
             color: #2c3e50;
-            font-size: 14px;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 1200px) {
+            .calculator-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
-            .calculators-grid {
+            .calculator-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -130,7 +136,8 @@
     <div class="container">
         <h1>店铺投资计算器</h1>
         
-        <div class="calculators-grid">
+        <div class="calculator-grid">
+            <!-- 建店成本计算 -->
             <div class="calculator-section">
                 <h2>建店成本计算</h2>
                 <div class="input-group">
@@ -167,6 +174,7 @@
                 </div>
             </div>
 
+            <!-- 毛利率计算 -->
             <div class="calculator-section">
                 <h2>毛利率计算</h2>
                 <div class="input-group">
@@ -187,6 +195,7 @@
                 </div>
             </div>
 
+            <!-- 盈亏平衡点计算 -->
             <div class="calculator-section">
                 <h2>盈亏平衡点计算</h2>
                 <div class="input-group">
@@ -215,6 +224,7 @@
                 </div>
             </div>
 
+            <!-- 回本周期计算 -->
             <div class="calculator-section">
                 <h2>回本周期计算</h2>
                 <div class="input-group">
