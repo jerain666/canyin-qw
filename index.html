@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>店铺投资计算器</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>店铺投资计算器</h1>
+
+    <!-- 建店成本 -->
+    <section class="section">
+      <h2>建店成本</h2>
+      <table>
+        <tr><th>类型</th><th>明细</th><th>金额（元）</th></tr>
+        <tr><td rowspan="2">押金</td><td>转让费</td><td><input type="number" id="transferFee" value="0"></td></tr>
+        <tr><td>房租押金</td><td><input type="number" id="rentDeposit" value="0"></td></tr>
+        <tr><td rowspan="5">固定成本</td><td>技术学习费</td><td><input type="number" id="trainingCost" value="0"></td></tr>
+        <tr><td>装修</td><td><input type="number" id="renovationCost" value="0"></td></tr>
+        <tr><td>广告</td><td><input type="number" id="adCost" value="0"></td></tr>
+        <tr><td>设备</td><td><input type="number" id="equipmentCost" value="0"></td></tr>
+        <tr><td>首批物料</td><td><input type="number" id="initialMaterial" value="0"></td></tr>
+        <tr><td rowspan="5">经营成本</td><td>3个月店租</td><td><input type="number" id="threeMonthsRent" value="0"></td></tr>
+        <tr><td>人工工资</td><td><input type="number" id="laborCost" value="0"></td></tr>
+        <tr><td>营销费用</td><td><input type="number" id="marketingCost" value="0"></td></tr>
+        <tr><td>预备资金</td><td><input type="number" id="reserveFund" value="0"></td></tr>
+        <tr><td><strong>总计资金</strong></td><td><strong id="totalInvestment">0</strong></td></tr>
+      </table>
+    </section>
+
+    <!-- 毛利率计算 -->
+    <section class="section">
+      <h2>毛利率计算</h2>
+      <p>毛利率 = (营业额 - 食材成本 - 包装) / 营业额</p>
+      <label>小吃单价：<input type="number" id="unitPrice" value="15"></label>
+      <label>食材成本：<input type="number" id="ingredientCost" value="5"></label>
+      <label>包装：<input type="number" id="packagingCost" value="2"></label>
+      <p><strong>毛利率：</strong> <span id="grossMargin">0%</span></p>
+    </section>
+
+    <!-- 盈亏平衡点 -->
+    <section class="section">
+      <h2>盈亏平衡点</h2>
+      <p>盈亏平衡点 = (每日固定成本) / 毛利率</p>
+      <label>每日房租：<input type="number" id="dailyRent" value="200"></label>
+      <label>每日人工工资：<input type="number" id="dailyLabor" value="300"></label>
+      <label>能源成本：<input type="number" id="dailyEnergy" value="50"></label>
+      <label>其他：<input type="number" id="dailyOther" value="50"></label>
+      <p><strong>日运营成本：</strong> <span id="dailyCost">500</span> 元</p>
+      <p><strong>盈亏平衡营业额：</strong> <span id="breakEven">0</span> 元</p>
+    </section>
+
+    <!-- 回本周期 -->
+    <section class="section">
+      <h2>回本周期</h2>
+      <p>回本周期 = 固定成本 / 月净利润</p>
+      <p><strong>固定成本（不含押金/转让费）：</strong> <span id="fixedCostTotal">0</span> 元</p>
+      <label>月净利润：<input type="number" id="monthlyProfit" value="10000"></label>
+      <p><strong>回本周期：</strong> <span id="paybackPeriod">0</span> 个月</p>
+    </section>
+  </div>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>
